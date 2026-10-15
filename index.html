@@ -11,6 +11,7 @@
 <body class="start">
   <main>
     <div class="hero">
+      <div class="licht" aria-hidden="true"><i></i><i></i><i></i></div>
       <h1><img src="/assets/logo.svg" alt="Aura Reformer Pilates" width="500" height="250"></h1>
       <button class="cta" type="button" aria-expanded="false" aria-controls="stundenplan">Stundenplan</button>
     </div>
@@ -52,6 +53,9 @@
 
     knopf.addEventListener('click', () => {
       const auf = !istOffen();
+      knopf.classList.remove('puls');
+      void knopf.offsetWidth; // Lichtimpuls bei jedem Klick neu starten
+      knopf.classList.add('puls');
       knopf.setAttribute('aria-expanded', auf);
       document.body.classList.toggle('offen', auf);
       plan.inert = !auf;

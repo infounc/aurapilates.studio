@@ -53,14 +53,77 @@ footer a:hover, footer a:focus-visible { text-decoration: underline; text-underl
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 3rem 1rem 0;
+  position: relative;
+  padding: 3rem 1rem 4.5rem;
   text-align: center;
+  isolation: isolate; /* Licht liegt hinter Logo und Button */
+  overflow: clip;
+  /* Licht laeuft unten weich aus, der Stundenplan liegt auf ruhigem Grund */
+  -webkit-mask-image: linear-gradient(to bottom, #000 calc(100% - 4.5rem), transparent);
+  mask-image: linear-gradient(to bottom, #000 calc(100% - 4.5rem), transparent);
 }
 .start.offen .hero { flex-grow: 0; } /* aufgeklappt: Logo gleitet nach oben */
-.start h1 { margin: 0; line-height: 0; }
+.start h1 { position: relative; margin: 0; line-height: 0; }
 .start h1 img { width: min(440px, 80vw); height: auto; }
+.start h1::before { /* Aura: weicher Lichtkranz hinter dem Logo */
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: -1;
+  width: 180%;
+  aspect-ratio: 1;
+  translate: -50% -50%;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(255, 255, 255, .9), rgba(255, 255, 255, .45) 45%, rgba(255, 255, 255, 0));
+  pointer-events: none;
+}
+.start.offen h1::before { scale: 1.1; }
+
+/* Licht hinter Logo und Button: zarte Verlaeufe, ziehen sich beim Aufklappen mit nach oben */
+.licht {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+.licht i { position: absolute; border-radius: 50%; }
+.licht::after { /* hauchfeines Korn gegen Stufen in den Verlaeufen */
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='k'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23k)'/%3E%3C/svg%3E");
+  opacity: .05;
+}
+.licht i:nth-child(1) { /* warmes Licht oben links */
+  left: -38vmax;
+  top: -42vmax;
+  width: 95vmax;
+  height: 95vmax;
+  background: radial-gradient(closest-side, rgba(236, 204, 184, .55), rgba(236, 204, 184, 0));
+}
+.licht i:nth-child(2) { /* Rose unten rechts */
+  right: -36vmax;
+  bottom: -40vmax;
+  width: 85vmax;
+  height: 85vmax;
+  background: radial-gradient(closest-side, rgba(214, 168, 162, .32), rgba(214, 168, 162, 0));
+}
+.licht i:nth-child(3) { /* helles Licht von oben, nur aufgeklappt */
+  left: -20vw;
+  top: -30vh;
+  width: 140vw;
+  height: 70vh;
+  background: radial-gradient(closest-side, rgba(255, 255, 255, .85), rgba(255, 255, 255, 0));
+  opacity: 0;
+}
+.offen .licht i:nth-child(1) { translate: 6vw 0; scale: 1.1; }
+.offen .licht i:nth-child(2) { translate: -8vw 0; opacity: .6; }
+.offen .licht i:nth-child(3) { opacity: 1; }
 
 .cta {
+  position: relative;
   display: inline-flex;
   align-items: center;
   gap: .8em;
@@ -75,9 +138,20 @@ footer a:hover, footer a:focus-visible { text-decoration: underline; text-underl
   letter-spacing: .3em;
   text-transform: uppercase;
   cursor: pointer;
-  transition: background-color .3s;
+  box-shadow: 0 10px 34px -8px rgba(125, 94, 81, 0);
+  transition: background-color .3s, box-shadow .6s;
 }
-.cta:hover { background: #6b4f44; }
+.cta:hover { background: #6b4f44; box-shadow: 0 10px 34px -8px rgba(125, 94, 81, .45); }
+.cta::before { /* Lichtimpuls beim Klick */
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background: radial-gradient(closest-side, rgba(148, 113, 98, .4), rgba(148, 113, 98, 0));
+  opacity: 0;
+  pointer-events: none;
+}
 .cta:focus-visible { outline: 2px solid var(--brand-text); outline-offset: 3px; }
 .cta::after { /* Pfeil, dreht sich beim Aufklappen */
   content: "";
@@ -95,7 +169,7 @@ footer a:hover, footer a:focus-visible { text-decoration: underline; text-underl
 .stundenplan-inhalt {
   max-width: var(--seitenbreite);
   margin: 0 auto;
-  padding: 2.5rem clamp(1.25rem, 4vw, 3rem) 3rem;
+  padding: 0 clamp(1.25rem, 4vw, 3rem) 3rem;
 }
 .laden {
   margin: 0;
@@ -120,12 +194,28 @@ footer a:hover, footer a:focus-visible { text-decoration: underline; text-underl
   .stundenplan { transition: height .9s var(--gleiten), opacity .5s ease; }
   .start.offen .stundenplan { transition: height .9s var(--gleiten), opacity .9s ease .2s; }
   .cta::after { transition: transform .6s var(--gleiten); }
+  .cta.puls::before { animation: puls 1.6s var(--auslaufen); }
+
+  /* Licht: geht beim Laden auf, atmet, wandert beim Aufklappen mit */
+  .licht { animation: einblenden 3.2s ease .4s both; }
+  .licht i { transition: translate 1.8s var(--gleiten), scale 1.8s var(--gleiten), opacity 1.8s ease; }
+  .licht i:nth-child(1) { animation: treiben-a 28s ease-in-out infinite alternate; }
+  .licht i:nth-child(2) { animation: treiben-b 34s ease-in-out infinite alternate; }
+  .start h1::before {
+    animation: aura-an 2.6s var(--auslaufen) .6s both, aura-atmen 9s ease-in-out 3.2s infinite alternate;
+    transition: scale 1.6s var(--gleiten);
+  }
   .laden { animation: atmen 1.8s ease-in-out infinite; }
   .stundenplan .da { animation: einblenden .9s ease both; }
 }
 @keyframes auftauchen { from { opacity: 0; transform: translateY(10px); filter: blur(4px); } }
 @keyframes einblenden { from { opacity: 0; } }
 @keyframes atmen { 50% { opacity: .35; } }
+@keyframes puls { from { opacity: 1; scale: 1; } to { opacity: 0; scale: 2.2 1.9; } }
+@keyframes treiben-a { to { transform: translate(5vw, 4vh) scale(1.06); } }
+@keyframes treiben-b { to { transform: translate(-6vw, -3vh) scale(1.08); } }
+@keyframes aura-an { from { opacity: 0; transform: scale(.6); } }
+@keyframes aura-atmen { from { transform: scale(1); opacity: 1; } to { transform: scale(1.08); opacity: .7; } }
 
 /* Unterseiten (Impressum, Datenschutz, AGB) */
 
