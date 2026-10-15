@@ -18,6 +18,7 @@ Nach dem Commit ist die Änderung nach ca. 1 Minute online.
 | `datenschutz.md` | Datenschutztext → `/datenschutz/` |
 | `impressum.md` | Impressum → `/impressum/` |
 | `agb.md` | AGB → `/agb/` |
+| `widget-test.html` | Testseite Eversports-Widget → `/widget-test/` (nicht verlinkt, noindex) |
 | `_layouts/default.html` | Rahmen für Textseiten (Logo oben, Links im Footer) |
 | `assets/` | Logo, Favicon, `style.css` |
 | `CNAME` | Custom Domain für GitHub Pages |

@@ -79,6 +79,7 @@ footer a:hover, footer a:focus-visible { text-decoration: underline; text-underl
   padding: 2rem 1.25rem 3rem;
   overflow-wrap: anywhere; /* lange URLs / E-Mail-Adressen umbrechen */
 }
+.page main.wide { max-width: 72rem; } /* Seiten mit Widgets */
 .page h1 {
   margin: 1rem 0 2rem;
   color: var(--brand-text);
