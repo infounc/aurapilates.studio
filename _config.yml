@@ -1,4 +1,4 @@
-# GitHub Pages baut die Seite mit Jekyll: datenschutz.md -> /datenschutz/
+# GitHub Pages baut die Seite mit Jekyll: impressum.md -> /impressum/, datenschutz.md -> /datenschutz/
 # index.html hat keinen Front-Matter-Block und wird unveraendert ausgeliefert.
 lang: de
 kramdown:

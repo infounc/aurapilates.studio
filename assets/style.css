@@ -24,8 +24,11 @@ body {
 a { color: var(--brand-text); }
 
 footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: .75rem 2rem;
   padding: 2rem 1rem;
-  text-align: center;
   font-size: .75rem;
   letter-spacing: .18em;
   text-transform: uppercase;

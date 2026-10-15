@@ -1,11 +1,11 @@
 # aurapilates.studio
 
 Platzhalter-Website für Aura Reformer Pilates: Startseite mit Logo und „Coming soon“
-plus Datenschutzseite unter `/datenschutz/`. Ausgeliefert über GitHub Pages.
+plus Impressum (`/impressum/`) und Datenschutz (`/datenschutz/`). Ausgeliefert über GitHub Pages.
 
-## Datenschutztext ändern
+## Datenschutz / Impressum ändern
 
-`datenschutz.md` bearbeiten (geht auch direkt auf github.com über das Stift-Symbol) und
+`datenschutz.md` bzw. `impressum.md` bearbeiten (geht auch direkt auf github.com über das Stift-Symbol) und
 den Text ändern. Zeilenumbrüche bleiben erhalten, Leerzeile = neuer Absatz,
 `## ` = Abschnittsüberschrift, `### ` = Unterabschnitt.
 Nach dem Commit ist die Änderung nach ca. 1 Minute online.
@@ -16,7 +16,8 @@ Nach dem Commit ist die Änderung nach ca. 1 Minute online.
 |---|---|
 | `index.html` | Startseite (Logo + Coming soon) |
 | `datenschutz.md` | Datenschutztext → `/datenschutz/` |
-| `_layouts/default.html` | Rahmen für Textseiten (Logo oben, Link zur Startseite) |
+| `impressum.md` | Impressum → `/impressum/` |
+| `_layouts/default.html` | Rahmen für Textseiten (Logo oben, Links im Footer) |
 | `assets/` | Logo, Favicon, `style.css` |
 | `CNAME` | Custom Domain für GitHub Pages |
 
