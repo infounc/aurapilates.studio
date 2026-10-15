@@ -37,7 +37,7 @@ Bei Fragen zum Datenschutz oder zur Ausübung Ihrer Datenschutzrechte können Si
 
 ## 2. Bereitstellung dieser Website über GitHub Pages
 
-Diese Datenschutzseite wird über GitHub Pages bereitgestellt, einen Hosting-Dienst von GitHub.
+Diese Website wird über GitHub Pages bereitgestellt, einen Hosting-Dienst von GitHub.
 
 Anbieter ist:
 
@@ -56,15 +56,15 @@ Beim Aufruf der Website werden technisch erforderliche Informationen verarbeitet
 
 GitHub gibt an, beim Besuch von GitHub-Pages-Websites die IP-Adressen der Besucher aus Sicherheitsgründen zu protokollieren.
 
-Die Verarbeitung dient der technischen Bereitstellung, Stabilität und Sicherheit unserer Datenschutzseite.
+Die Verarbeitung dient der technischen Bereitstellung, Stabilität und Sicherheit unserer Website.
 
-Rechtsgrundlage für die von uns veranlasste Bereitstellung der Website ist Art. 6 Abs. 1 lit. f DSGVO. Unser berechtigtes Interesse liegt in der sicheren und öffentlich zugänglichen Bereitstellung gesetzlich erforderlicher Informationen.
+Rechtsgrundlage für die von uns veranlasste Bereitstellung der Website ist Art. 6 Abs. 1 lit. f DSGVO. Unser berechtigtes Interesse liegt in der sicheren und öffentlich zugänglichen Bereitstellung unserer Website und der gesetzlich erforderlichen Informationen.
 
 Eine Verarbeitung personenbezogener Daten in den USA kann stattfinden. Informationen zum Umgang mit personenbezogenen Daten und internationalen Datenübermittlungen stellt GitHub in seiner Datenschutzerklärung bereit:
 
 <https://docs.github.com/de/site-policy/privacy-policies/github-general-privacy-statement>
 
-Wir setzen auf dieser Datenschutzseite selbst keine zusätzlichen Analysewerkzeuge, Werbe-Pixel oder Marketing-Tracking-Dienste ein.
+Wir setzen auf dieser Website selbst keine zusätzlichen Analysewerkzeuge, Werbe-Pixel oder Marketing-Tracking-Dienste ein.
 
 ## 3. Kontaktaufnahme und E-Mail-Kommunikation
 
