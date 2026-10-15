@@ -1,6 +1,8 @@
 # GitHub Pages baut die Seite mit Jekyll: datenschutz.md -> /datenschutz/
 # index.html hat keinen Front-Matter-Block und wird unveraendert ausgeliefert.
 lang: de
+kramdown:
+  hard_wrap: true # Zeilenumbruch im Text = Zeilenumbruch auf der Seite (Adressen)
 defaults:
   - scope:
       path: ""

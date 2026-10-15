@@ -6,7 +6,8 @@ plus Datenschutzseite unter `/datenschutz/`. Ausgeliefert über GitHub Pages.
 ## Datenschutztext ändern
 
 `datenschutz.md` bearbeiten (geht auch direkt auf github.com über das Stift-Symbol) und
-den Platzhalter durch den Text ersetzen. Leerzeile = neuer Absatz, `## ` = Zwischenüberschrift.
+den Text ändern. Zeilenumbrüche bleiben erhalten, Leerzeile = neuer Absatz,
+`## ` = Abschnittsüberschrift, `### ` = Unterabschnitt.
 Nach dem Commit ist die Änderung nach ca. 1 Minute online.
 
 ## Dateien
