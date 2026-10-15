@@ -1,0 +1,10 @@
+# GitHub Pages baut die Seite mit Jekyll: datenschutz.md -> /datenschutz/
+# index.html hat keinen Front-Matter-Block und wird unveraendert ausgeliefert.
+lang: de
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+exclude:
+  - README.md
