@@ -3,20 +3,68 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Aura Reformer Pilates – Coming soon</title>
-  <meta name="description" content="Aura Reformer Pilates – Coming soon.">
+  <title>Aura Reformer Pilates</title>
+  <meta name="description" content="AURA Reformer Pilates in Quickborn – Stundenplan und Kursbuchung.">
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/assets/style.css">
 </head>
-<body class="soon">
+<body class="start">
   <main>
-    <h1><img src="/assets/logo.svg" alt="Aura Reformer Pilates" width="500" height="250"></h1>
-    <p class="tagline">Coming soon</p>
+    <div class="hero">
+      <h1><img src="/assets/logo.svg" alt="Aura Reformer Pilates" width="500" height="250"></h1>
+      <button class="cta" type="button" aria-expanded="false" aria-controls="stundenplan">Stundenplan</button>
+    </div>
+    <section id="stundenplan" class="stundenplan" aria-label="Stundenplan" inert>
+      <div class="stundenplan-inhalt">
+        <p class="laden" role="status">Stundenplan wird geladen …</p>
+        <div data-eversports-widget-id="5a8f2a10-c67c-40d4-812b-6f065cbe430f"></div>
+      </div>
+    </section>
   </main>
   <footer>
     <a href="/impressum/">Impressum</a>
     <a href="/datenschutz/">Datenschutz</a>
     <a href="/agb/">AGB</a>
   </footer>
+  <script>
+    // Stundenplan auf- und zuklappen. Das Eversports-Skript wird erst beim
+    // ersten Aufklappen geladen: vorher keine Verbindung zu Eversports.
+    const knopf = document.querySelector('.cta');
+    const plan = document.getElementById('stundenplan');
+    const inhalt = plan.querySelector('.stundenplan-inhalt');
+    const widget = plan.querySelector('[data-eversports-widget-id]');
+    const laden = plan.querySelector('.laden');
+    const istOffen = () => knopf.getAttribute('aria-expanded') === 'true';
+
+    // Die Hoehe folgt dem Inhalt, auch wenn das Widget spaeter nachlaedt (per CSS animiert)
+    const hoeheAnpassen = () => {
+      plan.style.height = istOffen() ? inhalt.offsetHeight + 'px' : '0px';
+    };
+    new ResizeObserver(hoeheAnpassen).observe(inhalt);
+
+    // Sobald das Widget etwas anzeigt: Ladehinweis weg, Widget sanft einblenden
+    new ResizeObserver(() => {
+      if (widget.offsetHeight > 0 && laden.isConnected) {
+        laden.remove();
+        widget.classList.add('da');
+      }
+    }).observe(widget);
+
+    knopf.addEventListener('click', () => {
+      const auf = !istOffen();
+      knopf.setAttribute('aria-expanded', auf);
+      document.body.classList.toggle('offen', auf);
+      plan.inert = !auf;
+      hoeheAnpassen();
+      if (auf && !plan.dataset.geladen) {
+        plan.dataset.geladen = 'ja';
+        const skript = document.createElement('script');
+        skript.type = 'module';
+        skript.src = 'https://widget-static.eversports.io/loader.js';
+        skript.onerror = () => { laden.textContent = 'Der Stundenplan konnte nicht geladen werden.'; };
+        document.body.append(skript);
+      }
+    });
+  </script>
 </body>
 </html>

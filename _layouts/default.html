@@ -3,7 +3,6 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  {% if page.noindex %}<meta name="robots" content="noindex, nofollow">{% endif %}
   <title>{{ page.title }} – Aura Reformer Pilates</title>
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/assets/style.css">
@@ -12,7 +11,7 @@
   <header>
     <a href="/"><img src="/assets/logo.svg" alt="Aura Reformer Pilates – zur Startseite" width="500" height="250"></a>
   </header>
-  <main{% if page.wide %} class="wide"{% endif %}>
+  <main>
 {{ content }}
   </main>
   <footer>

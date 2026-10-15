@@ -1,6 +1,6 @@
 # aurapilates.studio
 
-Platzhalter-Website für Aura Reformer Pilates: Startseite mit Logo und „Coming soon“
+Website für Aura Reformer Pilates: Startseite mit Logo und aufklappbarem Stundenplan (Eversports)
 plus Impressum (`/impressum/`), Datenschutz (`/datenschutz/`) und AGB (`/agb/`). Ausgeliefert über GitHub Pages.
 
 ## Impressum / Datenschutz / AGB ändern
@@ -14,11 +14,10 @@ Nach dem Commit ist die Änderung nach ca. 1 Minute online.
 
 | Datei | Inhalt |
 |---|---|
-| `index.html` | Startseite (Logo + Coming soon) |
+| `index.html` | Startseite (Logo + Button, der den Eversports-Stundenplan aufklappt) |
 | `datenschutz.md` | Datenschutztext → `/datenschutz/` |
 | `impressum.md` | Impressum → `/impressum/` |
 | `agb.md` | AGB → `/agb/` |
-| `widget-test.html` | Testseite Eversports-Widget → `/widget-test/` (nicht verlinkt, noindex) |
 | `_layouts/default.html` | Rahmen für Textseiten (Logo oben, Links im Footer) |
 | `assets/` | Logo, Favicon, `style.css` |
 | `CNAME` | Custom Domain für GitHub Pages |
