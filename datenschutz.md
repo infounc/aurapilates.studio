@@ -64,7 +64,7 @@ Eine Verarbeitung personenbezogener Daten in den USA kann stattfinden. Informati
 
 <https://docs.github.com/de/site-policy/privacy-policies/github-general-privacy-statement>
 
-Wir setzen auf dieser Website selbst keine zusätzlichen Analysewerkzeuge, Werbe-Pixel oder Marketing-Tracking-Dienste ein.
+Wir setzen auf dieser Website selbst keine zusätzlichen Analysewerkzeuge, Werbe-Pixel oder Marketing-Tracking-Dienste ein. Zum Stundenplan von Eversports auf dieser Website siehe Abschnitt 4.
 
 ## 3. Kontaktaufnahme und E-Mail-Kommunikation
 
@@ -126,6 +126,10 @@ Art. 6 Abs. 1 lit. f DSGVO, soweit berechtigte Interessen an einer ordnungsgemä
 Für die Verarbeitung von Kunden- und Buchungsdaten innerhalb des Eversports Managers ist AURA Reformer Pilates nach Maßgabe der jeweiligen Verarbeitung verantwortlich.
 
 Eversports kann abhängig von der jeweiligen Funktion als Auftragsverarbeiter, eigenständig Verantwortlicher oder im Rahmen einer gemeinsamen Verantwortlichkeit tätig werden.
+
+Auf dieser Website können Sie über die Schaltfläche „Stundenplan“ unseren aktuellen Kursplan aufrufen. Dabei handelt es sich um ein eingebundenes Widget von Eversports. Das Widget wird erst geladen, wenn Sie die Schaltfläche anklicken; vorher wird keine Verbindung zu Eversports hergestellt. Beim Laden werden die Inhalte des Widgets von Servern von Eversports abgerufen. Dabei werden technisch erforderliche Daten wie Ihre IP-Adresse, Datum und Uhrzeit des Abrufs sowie Informationen zu Browser und Betriebssystem an Eversports übermittelt.
+
+Rechtsgrundlage für die Einbindung des Stundenplans ist Art. 6 Abs. 1 lit. f DSGVO. Unser berechtigtes Interesse liegt in einer übersichtlichen Darstellung unseres Kursangebots und einer einfachen Buchungsmöglichkeit. Wenn Sie über den Stundenplan eine Buchung vornehmen, gelten die oben genannten Rechtsgrundlagen.
 
 Weitere Informationen zur Datenverarbeitung durch Eversports finden Sie unter:
 
